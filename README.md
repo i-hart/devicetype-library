@@ -1,16 +1,16 @@
-# NetBox Device Type Library
+# Nautobot Device Type Library
 
 ## About this Library
 
-This library is intended to be used for populating device types in [NetBox](https://github.com/netbox-community/netbox).
+This library is intended to be used for populating device types in [Nautobot](https://github.com/netbox-community/netbox).
 It contains a set of device type definitions expressed in YAML and arranged by manufacturer. Each file represents a
-discrete physical device type (e.g. make and model). These definitions can be loaded into NetBox instead of creating
+discrete physical device type (e.g. make and model). These definitions can be loaded into Nautobot instead of creating
 new device type definitions manually.
 
 If you would like to contribute to this library, please read through our [contributing guide](CONTRIBUTING.md) before
 submitting content.
 
-If you would like to automate the import of these devicetype template files, there is a NetBox Community python script
+If you would like to automate the import of these devicetype template files, there is a Nautobot Community python script
 that will check for duplicates, allow you to selectively import vendors, etc. available here [netbox-community/Device-Type-Library-Import](https://github.com/netbox-community/Device-Type-Library-Import).
 
 ## Device Type Definitions
@@ -79,7 +79,7 @@ The following fields may **optionally** be declared:
   - :test_tube: Example: `subdevice_role: parent`
 - `comments`: A string field which allows for comments to be added to the device. (**Default: None**)
   - Type: String
-  - :test_tube: Example: `comments: This is a comment that will appear on all NetBox devices of this type`
+  - :test_tube: Example: `comments: This is a comment that will appear on all Nautobot devices of this type`
 - `is_powered`: A boolean which indicates whether the device type does not take power. This is mainly used as a workaround for validation testing on non powered devices (i.e. rackmount kits or patch pannels.) (**Default: True**)
   - Type: Boolean
   - :test_tube: Example: `is_powered: false`
@@ -150,16 +150,16 @@ For further detail on these attributes and those listed below, please reference 
 Valid component types are listed below. Each type of component must declare a list of the individual component templates
 to be added.
 
-- [console-ports](#console-ports "Availible in NetBox 2 and later")
-- [console-server-ports](#console-server-ports "Availible in NetBox 2.2 and later")
-- [power-ports](#power-ports "Availible in NetBox 1.7 and later")
-- [power-outlets](#power-outlets "Availible in NetBox 2 and later")
-- [interfaces](#interfaces "Availible in all versions of NetBox")
-- [front-ports](#front-ports "Availible in NetBox 2.5 and later")
-- [rear-ports](#rear-ports "Availible in NetBox 2.5 and later")
-- [module-bays](#module-bays "Availible in NetBox 3.2 and later")
-- [device-bays](#device-bays "Availible in all versions of NetBox")
-- [inventory-items](#inventory-items "Availible in NetBox 3.2 and later")
+- [console-ports](#console-ports "Availible in Nautobot 2 and later")
+- [console-server-ports](#console-server-ports "Availible in Nautobot 2.2 and later")
+- [power-ports](#power-ports "Availible in Nautobot 1.7 and later")
+- [power-outlets](#power-outlets "Availible in Nautobot 2 and later")
+- [interfaces](#interfaces "Availible in all versions of Nautobot")
+- [front-ports](#front-ports "Availible in Nautobot 2.5 and later")
+- [rear-ports](#rear-ports "Availible in Nautobot 2.5 and later")
+- [module-bays](#module-bays "Availible in Nautobot 3.2 and later")
+- [device-bays](#device-bays "Availible in all versions of Nautobot")
+- [inventory-items](#inventory-items "Availible in Nautobot 3.2 and later")
 
 The available fields for each type of component are listed below.
 
@@ -213,7 +213,7 @@ Power outlets represent the outlets on a power distribution unit (PDU) or other 
 
 **[Documentation](https://docs.netbox.dev/en/stable/models/dcim/interface/)**
 
-Interfaces in NetBox represent network interfaces used to exchange data with connected devices. On modern networks, these are most commonly Ethernet, but other types are supported as well. IP addresses and VLANs can be assigned to interfaces.
+Interfaces in Nautobot represent network interfaces used to exchange data with connected devices. On modern networks, these are most commonly Ethernet, but other types are supported as well. IP addresses and VLANs can be assigned to interfaces.
 
 - `name`: Name
 - `label`: Label
@@ -226,7 +226,7 @@ Interfaces in NetBox represent network interfaces used to exchange data with con
 
 **[Documentation](https://docs.netbox.dev/en/stable/models/dcim/frontport/)**
 
-Front ports are pass-through ports which represent physical cable connections that comprise part of a longer path. For example, the ports on the front face of a UTP patch panel would be modeled in NetBox as front ports. Each port is assigned a physical type, and must be mapped to a specific rear port on the same device. A single rear port may be mapped to multiple front ports, using numeric positions to annotate the specific alignment of each.
+Front ports are pass-through ports which represent physical cable connections that comprise part of a longer path. For example, the ports on the front face of a UTP patch panel would be modeled in Nautobot as front ports. Each port is assigned a physical type, and must be mapped to a specific rear port on the same device. A single rear port may be mapped to multiple front ports, using numeric positions to annotate the specific alignment of each.
 
 - `name`: Name
 - `label`: Label
@@ -255,7 +255,7 @@ Module bays represent a space or slot within a device in which a field-replaceab
 
 - `name`: Name
 - `label`: Label
-- `position`: The alphanumeric position in which this module bay is situated within the parent device. When creating module components, the string `{module}` in the component name will be replaced with the module bay's `position`. See the [NetBox Documentation](https://docs.netbox.dev/en/stable/models/dcim/moduletype/#automatic-component-renaming) for more details.
+- `position`: The alphanumeric position in which this module bay is situated within the parent device. When creating module components, the string `{module}` in the component name will be replaced with the module bay's `position`. See the [Nautobot Documentation](https://docs.netbox.dev/en/stable/models/dcim/moduletype/#automatic-component-renaming) for more details.
 
 #### Device Bays
 
@@ -300,4 +300,4 @@ There are two ways this repo focuses on keeping quality device-type definitions:
     - To run the pre-commit script on all files: `pre-commit run -a`
     - To uninstall the pre-commit script: `pre-commit uninstall`
   - Learn more about [pre-commit](https://pre-commit.com/)
-- **GitHub Actions** - Automatically run before a PR can be merged. Repeats yamllint & validates against NetBox Device-Type Schema.
+- **GitHub Actions** - Automatically run before a PR can be merged. Repeats yamllint & validates against Nautobot Device-Type Schema.
