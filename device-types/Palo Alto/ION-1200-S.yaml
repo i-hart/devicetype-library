@@ -2,13 +2,13 @@
 manufacturer: Palo Alto
 model: ION-1200-S
 part_number: PAN-ION-1200-S
-#slug: palo-alto-ion-1200-s
+slug: palo-alto-ion-1200-s
 u_height: 0
 is_full_depth: false
 subdevice_role: child
-airflow: passive
-weight: 7.85
-weight_unit: lb
+cf_airflow: passive
+cf_weight: 7.85
+cf_weight_unit: lb
 front_image: true
 rear_image: true
 comments: '[ION models datasheet](https://www.paloaltonetworks.com/apps/pan/public/downloadResource?pagePath=/content/pan/en_US/resources/datasheets/prisma-sd-wan-instant-on-network-ion-device-specifications)'

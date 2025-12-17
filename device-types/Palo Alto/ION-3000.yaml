@@ -1,0 +1,58 @@
+manufacturer: Palo Alto
+model: ion 3000
+part_number: PAN-ION-3000
+u_height: 1
+is_full_depth: false
+subdevice_role: ''
+comments: '[ion 3000 datasheet](https://docs.paloaltonetworks.com/hardware/ion-3000-hardware-reference/ion-3000-overview)'
+console-ports:
+- name: aux
+  type: rj-45
+power-ports:
+- name: PS1
+  type: iec-60320-c14
+  maximum_draw: 130
+  allocated_draw: 90
+interfaces:
+- name: eth0
+  type: 1000base-t
+  mgmt_only: false
+- name: eth1
+  type: 1000base-t
+  mgmt_only: false
+- name: eth2
+  type: 1000base-t
+  mgmt_only: false
+- name: eth3
+  type: 1000base-t
+  mgmt_only: false
+- name: eth4
+  type: 1000base-t
+  mgmt_only: false
+- name: eth5
+  type: 1000base-t
+  mgmt_only: false
+- name: eth6
+  type: 1000base-t
+  mgmt_only: false
+- name: eth7
+  type: 1000base-t
+  mgmt_only: false
+- name: eth8
+  type: 1000base-t
+  mgmt_only: false
+- name: eth9
+  type: 1000base-t
+  mgmt_only: false
+- name: eth10
+  type: 1000base-t
+  mgmt_only: false
+- name: eth11
+  type: 1000base-t
+  mgmt_only: false
+- name: eth12
+  type: 1000base-t
+  mgmt_only: false
+- name: eth13
+  type: 1000base-t
+  mgmt_only: false
